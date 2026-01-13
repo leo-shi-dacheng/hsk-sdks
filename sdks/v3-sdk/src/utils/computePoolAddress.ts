@@ -27,7 +27,7 @@ export function computePoolAddress({
   tokenB: Token
   fee: FeeAmount
   initCodeHashManualOverride?: string
-  chainId?: ChainId
+  chainId?: ChainId | number
 }): string {
   const [token0, token1] = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
   const salt = keccak256(
